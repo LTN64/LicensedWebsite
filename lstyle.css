@@ -42,7 +42,7 @@ div {
 }
 
 .small-image {
-    width: 450px; /* Adjust width as needed */
+width: 450px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     border: 4px solid #000000da; /* Optional border */
     border-radius: 8px; /* Optional rounded corners */
