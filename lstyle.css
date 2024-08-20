@@ -46,6 +46,7 @@ div {
     height: auto; /* Maintain aspect ratio */
     border: 4px solid #000000da; /* Optional border */
     border-radius: 8px; /* Optional rounded corners */
+    margin-left: 13px;
 }
 
 .small-image:hover {
