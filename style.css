@@ -1,0 +1,28 @@
+h1 {
+    color: blue;
+    font-family: "Georgia", "Courier New", monospace;
+    text-align: center;
+}
+
+button {
+    color: blue ;
+    background-color: rgb(77, 75, 75);
+    ;
+}
+
+button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+input {
+    background-color: rgb(77, 75, 75);
+    opacity: 1.0;
+}
+
+input:hover {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(4, 71, 196, 0.7);
+    transform: scale(1.005);
+}
+ 

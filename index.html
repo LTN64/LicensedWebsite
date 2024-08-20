@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Page</title>
+    <link rel="icon" type="website-icon" href="key.png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+          body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(65deg, #4f6fd6, #313131, #5490c9, #313131);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        body { 
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .input[type="text"] {
+            padding: 10px;
+            padding-left: 25px;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        .button {
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            color: blue;
+        }
+        .message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>Enter Your License Key.</b></h1>
+        <input type="text" id="licenseKey" placeholder="Enter license key">
+        <button onclick="checkLicense()" title= "Remember, licenses can only be used once.">Submit</button>
+        <p id="message" class="message"></p>
+    </div>
+    <script>
+        // List of valid license keys
+        const validLicenseKeys = [
+            "Zonda",
+            "123",
+        ];
+    
+        function checkLicense() {
+            const licenseKey = document.getElementById('licenseKey').value;
+            const usedKeys = JSON.parse(localStorage.getItem('usedKeys') || '[]');
+            
+            if (validLicenseKeys.includes(licenseKey) && !usedKeys.includes(licenseKey)) {
+                usedKeys.push(licenseKey);
+                localStorage.setItem('usedKeys', JSON.stringify(usedKeys));
+                localStorage.setItem('hasAccess', 'true');
+                window.location.href = 'locked.html';
+            } else {
+                document.getElementById('message').textContent = 'Invalid or already used license.';
+            }
+        }
+    </script>
+</body>
+</html>
