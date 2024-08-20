@@ -16,15 +16,52 @@
             max-width: 600px;
             margin: auto;
         }
+
+        body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(55deg, #4f6fd6, #313131, #5490c9, #313131);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Successfully Entered</h1>
-        <p>Welcome! You have successfully entered a valid license key (All code written by Annie).</p>
+        <p>Welcome! You have successfully entered a valid license key.</p>
         <button onclick="logout()">Logout</button>
     </div>
 
+    <div class="div">
+    <p></p>
+    </div>
+    
+    <div class="image-container">
+        <img src="Anniedog.jpg" alt="Description of Image" class="small-image">
+        <h3> Annie (Company CEO and Founder) </h3>
+        <p>  </p>
+    </div>
+
+    
+    </div>
+
+
+   
 
     <script>
         window.onload = function() {
@@ -40,9 +77,6 @@
         }
     </script>
     
-    <div class="download-box">
-     
-        <a href="C:\Users\luket\Desktop\license\vecteezy_key-png-graphic-clipart-design_19907697.png" class="download-button" download>Download Now</a>
-    </div>
+    
 </body>
 </html>
