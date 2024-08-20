@@ -60,26 +60,8 @@
         <button onclick="checkLicense()" title= "Remember, licenses can only be used once.">Submit</button>
         <p id="message" class="message"></p>
     </div>
-    <script>
-        // List of valid license keys
-        const validLicenseKeys = [
-            "Blqzx123",
-            "9785",
-        ];
     
-        function checkLicense() {
-            const licenseKey = document.getElementById('licenseKey').value;
-            const usedKeys = JSON.parse(localStorage.getItem('usedKeys') || '[]');
-            
-            if (validLicenseKeys.includes(licenseKey) && !usedKeys.includes(licenseKey)) {
-                usedKeys.push(licenseKey);
-                localStorage.setItem('usedKeys', JSON.stringify(usedKeys));
-                localStorage.setItem('hasAccess', 'true');
-                window.location.href = 'locked.html';
-            } else {
-                document.getElementById('message').textContent = 'Invalid or already used license.';
-            }
-        }
-    </script>
+  <script src="main.js"></script>
+    
 </body>
 </html>
