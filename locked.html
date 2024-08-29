@@ -64,17 +64,22 @@
    
 
     <script>
-        window.onload = function() {
-            const hasAccess = localStorage.getItem('hasAccess');
-            if (hasAccess !== 'true') {
-                window.location.href = 'index.html';
-            }
-        };
+      // Deletes access
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
 
-        function logout() {
-            localStorage.removeItem('hasAccess');
-            window.location.href = 'index.html';
-        }
+window.onload = function() {
+    const hasAccess = getCookie('hasAccess');
+    if (hasAccess !== 'true') {
+        window.location.href = 'index.html';
+    }
+};
+
+function logout() {
+    eraseCookie('hasAccess');
+    window.location.href = 'index.html'; 
+}
     </script>
     
     
